@@ -1,47 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:le_qvt/main.dart';
+import 'package:le_qvt/pages/QuestionPage/question_page.dart';
+import 'package:le_qvt/pages/bottomNavigation/bottom_navigation.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+//i
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 193, 176, 176),
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(''),
-          flexibleSpace: Center(
-            child: Image.asset(
-              'assets/images/vintage-g11af0ca45_1280.png',
-              fit: BoxFit.cover,
-            ),
-          ),
-          backgroundColor: Color.fromARGB(255, 126, 126, 126),
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.settings,
-                color: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.white,
+                child: Center(
+                  child: Text(
+                    'Résultats du dernier questionnaire',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
               ),
-              onPressed: () {},
+            ),
+            SizedBox(height: 16.0),
+            Expanded(
+              flex: 1,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuestionPage()),
+                  );
+                },
+                child: Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: Text(
+                      'Questionnaire du jour',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

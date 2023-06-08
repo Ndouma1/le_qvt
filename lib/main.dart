@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:le_qvt/pages/bottomNavigation/bottom_navigation.dart';
 import 'package:le_qvt/pages/homepage/home_page.dart';
 
 void main() {
@@ -6,15 +7,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    return MaterialApp(
+      title: 'Mon application',
+      theme: ThemeData(
+          // Configuration du thème
+          ),
+      home:
+          BottomNavigation(), // Utilisation de BottomNavigation comme page d'accueil
     );
   }
 }

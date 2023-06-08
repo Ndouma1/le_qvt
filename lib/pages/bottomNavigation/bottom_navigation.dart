@@ -1,31 +1,51 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+import 'package:le_qvt/pages/ProfilePage/ProfilePage.dart';
+import 'package:le_qvt/pages/SettingPage/SettingsPage.dart';
+import 'package:le_qvt/pages/homepage/home_page.dart';
+import 'package:le_qvt/pages/questionpage/question_page.dart';
+import 'package:le_qvt/pages/statspage/stats_page.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+  const BottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  _BottomNavigationState createState() => _BottomNavigationState();
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
+  int _currentIndex = 0;
+
+  final List<Widget> _pages = [
+    HomePage(),
+    ProfilePage(),
+    QuestionPage(),
+    StatsPage(
+      ratings: [2, 5, 6],
+    ),
+    SettingsPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _pages[_currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: <Widget>[
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-        ],
+        index: _currentIndex,
         onTap: (index) {
-          //Handle button tap
+          setState(() {
+            _currentIndex = index;
+          });
         },
+        items: [
+          Icon(Icons.home),
+          Icon(Icons.person),
+          Icon(Icons.quiz),
+          Icon(Icons.stacked_bar_chart_sharp),
+          Icon(Icons.settings),
+        ],
       ),
-      body: Container(color: Colors.blueAccent),
     );
   }
 }
