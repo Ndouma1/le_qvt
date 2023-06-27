@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51982584312",
+    "project_id": "leqvt-21d38",
+    "storage_bucket": "leqvt-21d38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51982584312:android:5e4884cd680c9e7ee8ee0d",
+        "android_client_info": {
+          "package_name": "com.example.leqvt.le_qvt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51982584312-j16jonh4s1i38vjonidsj40t1v6uktth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbc7PQxNEEm9YJejhVnUdaRq3LuiRulCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51982584312-j16jonh4s1i38vjonidsj40t1v6uktth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

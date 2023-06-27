@@ -4,7 +4,7 @@ import 'package:charts_flutter/flutter.dart' as charts;
 class StatsPage extends StatelessWidget {
   final List<int> ratings;
 
-  StatsPage({required this.ratings});
+  const StatsPage({super.key, required this.ratings});
 
   List<charts.Series<RatingData, String>> _createChartData() {
     final data = [
@@ -28,17 +28,17 @@ class StatsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Statistiques QVT'),
+        title: const Text('Statistiques QVT'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            Text(
+            const Text(
               'Tendances de la qualité de vie au travail',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Expanded(
               child: charts.BarChart(
                 _createChartData(),

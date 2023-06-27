@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -29,10 +31,10 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
+        title: const Text('Profil'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -45,8 +47,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: _iconColor,
               ),
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Personnaliser le profil',
               style: TextStyle(
                 fontSize: 18.0,
@@ -54,8 +56,8 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.color_lens),
-              title: Text('Couleur des icônes'),
+              leading: const Icon(Icons.color_lens),
+              title: const Text('Couleur des icônes'),
               trailing: DropdownButton<Color>(
                 value: _iconColor,
                 items: <Color>[
@@ -77,8 +79,8 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.photo),
-              title: Text('Icône de la photo de profil'),
+              leading: const Icon(Icons.photo),
+              title: const Text('Icône de la photo de profil'),
               trailing: DropdownButton<IconData>(
                 value: _photoIcon,
                 items: <IconData>[

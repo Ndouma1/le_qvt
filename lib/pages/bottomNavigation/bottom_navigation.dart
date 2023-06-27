@@ -18,13 +18,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),
-    ProfilePage(),
+    const HomePage(
+      userId: '',
+    ),
+    const ProfilePage(),
     QuestionPage(),
     StatsPage(
-      ratings: [2, 5, 6],
+      ratings: const [2, 5, 6],
     ),
-    SettingsPage(),
+    const SettingsPage(),
   ];
 
   @override
@@ -38,7 +40,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             _currentIndex = index;
           });
         },
-        items: [
+        items: const [
           Icon(Icons.home),
           Icon(Icons.person),
           Icon(Icons.quiz),

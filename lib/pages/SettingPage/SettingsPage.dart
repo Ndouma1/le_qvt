@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Paramètres'),
+        title: const Text('Paramètres'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Paramètres généraux',
               style: TextStyle(
                 fontSize: 18.0,
@@ -20,8 +22,8 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.language),
-              title: Text('Langue'),
+              leading: const Icon(Icons.language),
+              title: const Text('Langue'),
               trailing: DropdownButton<String>(
                 value: 'fr',
                 items: <String>[
@@ -40,8 +42,8 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.notifications),
-              title: Text('Notifications'),
+              leading: const Icon(Icons.notifications),
+              title: const Text('Notifications'),
               trailing: Switch(
                 value: true,
                 onChanged: (newValue) {
@@ -49,8 +51,8 @@ class SettingsPage extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 16.0),
-            Text(
+            const SizedBox(height: 16.0),
+            const Text(
               'Autres paramètres',
               style: TextStyle(
                 fontSize: 18.0,
@@ -58,8 +60,8 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.delete),
-              title: Text('Supprimer le compte'),
+              leading: const Icon(Icons.delete),
+              title: const Text('Supprimer le compte'),
               onTap: () {
                 // Afficher une boîte de dialogue de confirmation
               },
